@@ -7,7 +7,7 @@ const Discover = () => {
   const genresTitle = "Pop";
   if(isFetching) return <Loader title="Loading songs..."/>
   
- 
+  if(error) return  <Error/>;
  
   return (
     
