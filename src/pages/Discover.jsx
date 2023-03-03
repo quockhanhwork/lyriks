@@ -5,11 +5,14 @@ import { useGetTopChartsQuery } from "../redux/services/shaZamCore";
 const Discover = () => {
   const {data, isFetching, error} = useGetTopChartsQuery()
   const genresTitle = "Pop";
-  isFetching && <Loader/>
-  error && <Error/>
+  if(isFetching) return <Loader title="Loading songs..."/>
+  
+ 
  
   return (
+    
     <div className="flex flex-col">
+      
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
         <h2 className="font-bold text-3xl text-white text-left">
           Discover {genresTitle}
