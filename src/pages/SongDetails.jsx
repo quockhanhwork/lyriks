@@ -40,7 +40,12 @@ const SongDetails = () => {
         <div className="mt-5">
           {songData?.sections[1].type === "LYRICS" ? (
             songData?.sections[1].text.map((line, i) => (
-              <p key={`lyrics-${line}-${i}`} className="text-gray-400 text-base my-1">{line}</p>
+              <p
+                key={`lyrics-${line}-${i}`}
+                className="text-gray-400 text-base my-1"
+              >
+                {line}
+              </p>
             ))
           ) : (
             <p className="text-gray-400 text-base ">Sorry, no lyrics found!</p>

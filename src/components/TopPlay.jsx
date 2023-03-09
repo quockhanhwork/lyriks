@@ -18,7 +18,7 @@ const TopChartCard = ({
   isPlaying,
   handlePauseClick,
   handlePlayClick,
-  activeSong
+  activeSong,
 }) => (
   <div className="w-full flex flex-row items-center hover:bg-[#4c426e] py-2 p-4 rounded-lg cursor-pointer mb-2">
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
@@ -48,9 +48,7 @@ const TopChartCard = ({
 );
 const TopPlay = () => {
   const dispatch = useDispatch();
-  const { activeSong, isPlaying } = useSelector(
-    (state) => state.player
-  );
+  const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data } = useGetTopChartsQuery();
   const divRef = useRef(null);
 
@@ -63,9 +61,9 @@ const TopPlay = () => {
   const handlePauseClick = () => {
     dispatch(playPause(false));
   };
-  
+
   const handlePlayClick = (song, i) => {
-    dispatch(setActiveSong({song,data,i}))
+    dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
   return (
