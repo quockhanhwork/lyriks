@@ -15,7 +15,9 @@ const AroundYou = () => {
       .get(
         `https://geo.ipify.org/api/v2/country?apiKey=at_ffKpc8uuoamHKVS31rNOmLTBogmyF`
       )
-      .then((res) => setCountry(res?.data?.location?.country))
+      .then((res) => {
+        setCountry(res?.data?.location?.country)
+      })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, [country]);
